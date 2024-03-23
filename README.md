@@ -26,7 +26,3 @@ py main.py
 ## Questions
 
 If you have **any** question, please send it in [issue page](https://github.com/codeuriii/Radioactivity-simulation/issues)
-
-## Credits
-
-Me
