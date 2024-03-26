@@ -32,12 +32,14 @@ def show(values: list[int]):
 nbr_dice = 40
 data = []
 while nbr_dice != 0:
+    data.append(nbr_dice)
     current_eliminated = 0
     for i in range(nbr_dice):
         current_lance = random.randint(1, 6)
         if current_lance == 6:
             current_eliminated += 1
     nbr_dice -= current_eliminated
-    data.append(current_eliminated)
+data.append(nbr_dice)
+    
 
 show(data)
