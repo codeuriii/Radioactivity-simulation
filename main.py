@@ -1,16 +1,10 @@
 import matplotlib.pyplot as plt
 import random
 
-closing = False
-
 def on_key_press(event):
-    global mng, closing
+    global mng
     if event.key == 'escape':
-        if closing:
-            plt.close()
-        else:
-            closing = True
-            mng.full_screen_toggle()
+        plt.close()
 
 def show(values: list[int]):
     global mng
@@ -22,10 +16,9 @@ def show(values: list[int]):
     plt.title("Nombre de dés éliminés en fonction du lancé")
 
     plt.grid(True)
-    plt.xticks(indexs[::2])
-    plt.yticks(range(max(values) + 1))
+    plt.xticks(indexs)
+    plt.yticks(list(range(max(values) + 1))[::2])
     mng = plt.get_current_fig_manager()
-    mng.full_screen_toggle()
     plt.connect('key_press_event', on_key_press)
     plt.show()
 
